@@ -5,9 +5,9 @@
  Copyright © 2017年 piggybear. All rights reserved.
  */
 
-"yearString" = " Year";
-"monthString" = " Month";
-"dayString" = " Day";
+"yearString" = " Tahun";
+"monthString" = " Bulan";
+"dayString" = " Hari";
 "hourString" = " H";
 "minuteString" = " M";
 "secondString" = " S";
