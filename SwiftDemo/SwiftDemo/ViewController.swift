@@ -41,9 +41,13 @@ class ViewController: UIViewController {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.isHiddenMiddleText = false;
-        datePicker.datePickerType = .type2;
-        datePicker.datePickerMode = .date
+        datePicker.isHiddenMiddleText = true;
+        datePicker.datePickerType = .type1;
+        datePicker.datePickerMode = .date2
+        datePicker.showUnit = .none
+        datePicker.minimumDate = Date().addingTimeInterval(-10 * 24 * 3600)
+        datePicker.maximumDate = Date()
+
         self.present(datePickerManager, animated: false, completion: nil)
         
 //        datePicker.minimumDate = NSDate.setYear(2015, month: 5, day: 10)

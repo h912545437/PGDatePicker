@@ -9,6 +9,9 @@
 
 @interface PGDatePicker (Date)
 - (void)date_setupSelectedDate;
+- (void)date2_setupSelectedDate;
 - (void)date_setDateWithComponents:(NSDateComponents *)components animated:(BOOL)animated;
+- (void)date2_setDateWithComponents:(NSDateComponents *)components animated:(BOOL)animated;
 - (void)date_didSelectWithComponent:(NSInteger)component;
+- (void)date2_didSelectWithComponent:(NSInteger)component;
 @end

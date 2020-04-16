@@ -221,6 +221,16 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             }
             return self.yearList.count;
         }
+        case PGDatePickerModeDate2:
+        {
+            if (component == 1) {
+                return self.monthList.count;
+            }
+            if (component == 2) {
+                return self.yearList.count;
+            }
+            return self.dayList.count;
+        }
         case PGDatePickerModeDateHour:
         {
             if (component == 0) {
@@ -418,6 +428,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             [self date_setDateWithComponents:components animated:animated];
         }
             break;
+            case PGDatePickerModeDate2:
+            {
+                [self date2_setDateWithComponents:components animated:animated];
+            }
+                break;
         case PGDatePickerModeDateHour:
         {
             [self dateHour_setDateWithComponents:components animated:animated];
@@ -501,6 +516,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             [self date_didSelectWithComponent:component];
         }
             break;
+            case PGDatePickerModeDate2:
+              {
+                  [self date2_didSelectWithComponent:component];
+              }
+                  break;
         case PGDatePickerModeDateHour:
         {
             [self dateHour_didSelectWithComponent:component];
@@ -581,6 +601,16 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 return [self.monthList[row] stringByAppendingString:self.monthString];
             }
             if (component == 2) {
+                return [self.dayList[row] stringByAppendingString:self.dayString];
+            }
+            return [self.yearList[row] stringByAppendingString:self.yearString];
+        }
+        case PGDatePickerModeDate2:
+        {
+            if (component == 1) {
+                return [self.monthList[row] stringByAppendingString:self.monthString];
+            }
+            if (component == 0) {
                 return [self.dayList[row] stringByAppendingString:self.dayString];
             }
             return [self.yearList[row] stringByAppendingString:self.yearString];
@@ -1375,6 +1405,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         case PGDatePickerModeYearAndMonth:
             return 2;
         case PGDatePickerModeDate:
+            return 3;
+        case PGDatePickerModeDate2:
             return 3;
         case PGDatePickerModeDateHour:
             return 4;
