@@ -38,7 +38,9 @@
         } else { 
             language = @"zh-Hant";
         }
-    } else {
+    } else if ([language hasPrefix:@"id"]) {
+        language = @"id";
+    }else {
         language = @"en";
     }
     return [self pg_localizedStringForKey:key value:value language:language];
